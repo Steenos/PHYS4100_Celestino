@@ -25,5 +25,5 @@ plt.xscale("log")
 plt.xlabel('h')
 plt.ylabel('Derivative')
 plt.xlim(1e-16, 1e-0)
-#plt.ylim(0.98,1.01)
+
 plt.show()
