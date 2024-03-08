@@ -38,6 +38,7 @@ parser.add_argument('-graph_type', choices=['deltoid', 'galilean', 'feys'], help
 args = parser.parse_args()
 
 def main():
+    # if args.subplots is True, make subplots of the three functions
     if args.subplots:
         fig, ax = plt.subplots(3, 1, figsize=(10, 10))
         x1, y1, theta1 = deltoid()
@@ -57,6 +58,7 @@ def main():
         ax[2].legend()
 
         plt.show()
+    # if args.graph_type is given, plot the chosen graph
     elif args.graph_type == 'deltoid':
         x1, y1, theta1 = deltoid()
         plt.plot(x1, y1, label='x = 2 cos θ + cos 2θ, y = 2 sin θ - sin 2θ')
@@ -72,6 +74,7 @@ def main():
         plt.plot(x3,y3, label="r = exp(cos(θ)) - 2cos(4θ) + sin(θ/12)^5")
         plt.legend()
         plt.show()
+    # if no arguments are given, plot all three graphs
     else:
         x1, y1, theta1 = deltoid()
         x2,y2,r2,theta2 = galilean_spiral()
